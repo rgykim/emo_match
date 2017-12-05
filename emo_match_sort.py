@@ -1,7 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/python2.7
 
 ### Hack to do stuff for Megan
-### 30 May 2017
 
 import csv
 import os
@@ -71,19 +70,19 @@ def main():
 
 	fixation = [[float(row['Time_of_trial']) + 2, 11, 1] for row in raw_data[5: :6]]
 
-	with open(f_input + '_emotional_faces' + format, 'wb') as out_csv:
+	with open(f_input[ :-2] + '_Emotional_faces' + format, 'wb') as out_csv:
 		writer = csv.writer(out_csv, delimiter = delim, quotechar = '"')
 		writer.writerows(emotional)
 
-	with open(f_input + '_neutral_faces' + format, 'wb') as out_csv:
+	with open(f_input[ :-2] + '_Neutral_faces' + format, 'wb') as out_csv:
 		writer = csv.writer(out_csv, delimiter = delim, quotechar = '"')
 		writer.writerows(neutral)
 
-	with open(f_input + '_shapes' + format, 'wb') as out_csv:
+	with open(f_input[ :-2] + '_Shapes' + format, 'wb') as out_csv:
 		writer = csv.writer(out_csv, delimiter = delim, quotechar = '"')
 		writer.writerows(shapes)
 
-	with open(f_input + '_fixation' + format, 'wb') as out_csv:
+	with open(f_input[ :-2] + '_Fixation' + format, 'wb') as out_csv:
 		writer = csv.writer(out_csv, delimiter = delim, quotechar = '"')
 		writer.writerows(fixation)
 
